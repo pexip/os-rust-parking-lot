@@ -1,0 +1,72 @@
+Source: rust-parking-lot
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-lock-api-0.4+default-dev (>= 0.4.6-~~) <!nocheck>,
+ librust-parking-lot-core-0.9+default-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>,
+ Wolfgang Silbermayr <wolfgang@silbermayr.at>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/parking-lot]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/parking-lot
+X-Cargo-Crate: parking_lot
+Rules-Requires-Root: no
+
+Package: librust-parking-lot-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-lock-api-0.4+arc-lock-dev (>= 0.4.6-~~),
+ librust-lock-api-0.4+default-dev (>= 0.4.6-~~),
+ librust-lock-api-0.4+nightly-dev (>= 0.4.6-~~),
+ librust-lock-api-0.4+owning-ref-dev (>= 0.4.6-~~),
+ librust-lock-api-0.4+serde-dev (>= 0.4.6-~~),
+ librust-parking-lot-core-0.9+deadlock-detection-dev,
+ librust-parking-lot-core-0.9+default-dev,
+ librust-parking-lot-core-0.9+nightly-dev
+Provides:
+ librust-parking-lot+arc-lock-dev (= ${binary:Version}),
+ librust-parking-lot+deadlock-detection-dev (= ${binary:Version}),
+ librust-parking-lot+default-dev (= ${binary:Version}),
+ librust-parking-lot+hardware-lock-elision-dev (= ${binary:Version}),
+ librust-parking-lot+nightly-dev (= ${binary:Version}),
+ librust-parking-lot+owning-ref-dev (= ${binary:Version}),
+ librust-parking-lot+send-guard-dev (= ${binary:Version}),
+ librust-parking-lot+serde-dev (= ${binary:Version}),
+ librust-parking-lot-0-dev (= ${binary:Version}),
+ librust-parking-lot-0+arc-lock-dev (= ${binary:Version}),
+ librust-parking-lot-0+deadlock-detection-dev (= ${binary:Version}),
+ librust-parking-lot-0+default-dev (= ${binary:Version}),
+ librust-parking-lot-0+hardware-lock-elision-dev (= ${binary:Version}),
+ librust-parking-lot-0+nightly-dev (= ${binary:Version}),
+ librust-parking-lot-0+owning-ref-dev (= ${binary:Version}),
+ librust-parking-lot-0+send-guard-dev (= ${binary:Version}),
+ librust-parking-lot-0+serde-dev (= ${binary:Version}),
+ librust-parking-lot-0.12-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+arc-lock-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+deadlock-detection-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+default-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+hardware-lock-elision-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+nightly-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+owning-ref-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+send-guard-dev (= ${binary:Version}),
+ librust-parking-lot-0.12+serde-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+arc-lock-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+deadlock-detection-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+default-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+hardware-lock-elision-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+nightly-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+owning-ref-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+send-guard-dev (= ${binary:Version}),
+ librust-parking-lot-0.12.1+serde-dev (= ${binary:Version})
+Description: Compact, efficient std sync primitives - Rust source code
+ This package contains the source for the Rust parking_lot crate, packaged by
+ debcargo for use with cargo and dh-cargo.
